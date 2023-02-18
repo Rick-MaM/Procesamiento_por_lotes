@@ -23,9 +23,12 @@ class Ordenar():
                     aux = aux + row
 
         self.name[0] = aux
-        
-    
-    def get_line(self):
         return self.name
+
+    def Hexadecimal_Decimal(self):
+        pass
+
+    def Decimal_Hexadecimal(self):
+        pass
 
 

@@ -11,19 +11,8 @@ class File():
         self.line = self.file.readlines()
         self.file.close()
 
-    def Format(self):
-        i = 0
-        number = len(self.line)
-        while(i < number):
+        return self.line
+
+    def Edit(self):
+        pass
             
-            self.Order.Separete(self.line[i])
-            Separacion = self.Order.get_line()
-            print(Separacion)
-            i += 1
-            
-
-
-
-file = File()
-file.Read()
-file.Format()
