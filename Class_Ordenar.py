@@ -39,5 +39,20 @@ class Ordenar():
             self.IPv4 = self.IPv4 + str(hex(int(aux[i]))) + "."
         return
     
+    def Clean_Ipv4(self):
+        aux =  self.IPv4.split(".")
+        self.IPv4 = ""
+        for i in range(len(aux)):
+            cont = 0
+            for j in aux[i]:
+                if (cont == 0 or cont == 1):
+                    pass
+                else:
+                    self.IPv4 = self.IPv4 + j
+                    if (cont == 3 and i < 3):
+                        self.IPv4 = self.IPv4 + "."
+                cont += 1
+
+        print(self.IPv4)
 
 
