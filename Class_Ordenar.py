@@ -1,4 +1,3 @@
-
 class Ordenar():
 
     def __init__(self):
@@ -22,11 +21,17 @@ class Ordenar():
                 else:
                     self.IPv6 = self.IPv6 + row
         
-        print(self.Last_Name,self.IPv4)
-        return self.IPv6
-
+        
     def Hexadecimal_Decimal(self):
-        pass
+        aux = self.IPv6.split(":")
+        self.IPv6 = ""
+        for i in range(len(aux)):
+            self.IPv6 = self.IPv6 + str(int(aux[i],16)) + ":"
+        
+        print(self.IPv6)
+        
+       
+
 
     def Decimal_Hexadecimal(self):
         pass
