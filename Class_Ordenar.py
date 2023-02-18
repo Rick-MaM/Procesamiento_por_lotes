@@ -2,28 +2,28 @@
 class Ordenar():
 
     def __init__(self):
-        self.name = []
+        self.IPv6 = ""
+        self.IPv4 = ""
+        self.Last_Name = ""
 
     #Eliminar la basura del archivo    
     def Separete(self,Line):
-        self.name = Line.split(",")
-        self.name.pop(4)
-        self.name.pop(3)
-        self.name.pop(1)
+        name = Line.split(",")
         
         band = False
-        aux = ""
-        for row in self.name[0]:
+        self.IPv4 = name[2]
+        self.Last_Name = name[5]
+        for row in name[0]:
             if (row == "/"):
                 band = True
             else:
                 if (band):
                     pass
                 else:
-                    aux = aux + row
-
-        self.name[0] = aux
-        return self.name
+                    self.IPv6 = self.IPv6 + row
+        
+        print(self.Last_Name,self.IPv4)
+        return self.IPv6
 
     def Hexadecimal_Decimal(self):
         pass
