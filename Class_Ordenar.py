@@ -12,7 +12,7 @@ class Ordenar:
         
         band = False
         self.IPv4 = name[5]
-        self.Last_Name = name[2]
+        self.Last_Name = name[2] + ":"
         for row in name[0]:
             if (row == "/"):
                 band = True
