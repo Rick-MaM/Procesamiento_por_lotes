@@ -1,19 +1,18 @@
 
 class Ordenar:
 
-    def __init__(self):
-        self.IPv6 = ""
-        self.IPv4 = ""
-        self.Last_Name = ""
+    def __init__(self,Line):
+        self.name = Line.split(",")
+        self.IPv6 = self.name[0]
+        self.IPv4 = self.name[5]
+        self.Last_Name = self.name[2] + ":"
 
-    #Eliminar la basura del archivo    
-    def Separete(self,Line):
-        name = Line.split(",")
-        
+    #Eliminar la basura de IPv6
+    def Clean_IPv6(self):
         band = False
-        self.IPv4 = name[5]
-        self.Last_Name = name[2] + ":"
-        for row in name[0]:
+        aux = self.IPv6
+        self.IPv6 = ""
+        for row in aux:
             if (row == "/"):
                 band = True
             else:
@@ -22,7 +21,7 @@ class Ordenar:
                 else:
                     self.IPv6 = self.IPv6 + row
         return 
-    
+
     #Transforma la IPv6 en Decimal            
     def Hexadecimal_Decimal(self):
         aux = self.IPv6.split(":")
