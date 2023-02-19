@@ -24,7 +24,7 @@ def main():
         order.Hexadecimal_Decimal()
         order.Decimal_Hexadecimal()
         order.Clean_Ipv4()
-        Date = order.Last_Name + order.IPv6 + order.IPv4 + "\n"
+        Date = order.Last_Name + " : " + order.IPv6 + " : " + order.IPv4 + "\n"
         
         if os.path.exists(name):
             file.Edit(Date)
