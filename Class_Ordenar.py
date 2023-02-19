@@ -1,5 +1,5 @@
 
-class Ordenar():
+class Ordenar:
 
     def __init__(self):
         self.IPv6 = ""
@@ -39,6 +39,7 @@ class Ordenar():
             self.IPv4 = self.IPv4 + str(hex(int(aux[i]))) + "."
         return
     
+    #Limpia el IPv4
     def Clean_Ipv4(self):
         aux =  self.IPv4.split(".")
         self.IPv4 = ""
@@ -48,11 +49,10 @@ class Ordenar():
                 if (cont == 0 or cont == 1):
                     pass
                 else:
-                    self.IPv4 = self.IPv4 + j
+                    self.IPv4 = self.IPv4 + j.upper()
                     if (cont == 3 and i < 3):
                         self.IPv4 = self.IPv4 + "."
                 cont += 1
-
-        print(self.IPv4)
+        return 
 
 
