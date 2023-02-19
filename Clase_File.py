@@ -3,17 +3,24 @@ class File:
 
     def __init__(self,name):
         self.file_name = name
+
+    def size(self):
+        file = open(self.file_name,"r")
+        self.size = file.readlines()
+        self.size = len(self.size)
+        return self.size
         
     def Read(self):
-        self.file = open(self.file_name,"r")
+        file = open(self.file_name,"r")
 
-        self.line = self.file.readlines()
-        self.file.close()
+        self.line = file.readlines()
+        file.close()
 
         return self.line
 
-    def create(self):
+    def create(self,Date):
         new_file = open("Salida.txt","w")
+        new_file.write(Date)
         new_file.close()
 
     def Edit(self,Date):
