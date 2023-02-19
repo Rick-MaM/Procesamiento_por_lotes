@@ -5,7 +5,7 @@ class Ordenar:
         self.name = Line.split(",")
         self.IPv6 = self.name[0]
         self.IPv4 = self.name[5]
-        self.Last_Name = self.name[2] + " : "
+        self.Last_Name = self.name[2]
 
     #Eliminar la basura de IPv6
     def Clean_IPv6(self):
@@ -27,7 +27,9 @@ class Ordenar:
         aux = self.IPv6.split(":")
         self.IPv6 = ""
         for i in range(len(aux)):
-            self.IPv6 = self.IPv6 + str(int(aux[i],16)) + " : "
+            self.IPv6 = self.IPv6 + str(int(aux[i],16))
+            if i != 7:
+                self.IPv6 = self.IPv6 + " : "
         return 
 
     #Transforma la IPv4 en Hexadecimal        
